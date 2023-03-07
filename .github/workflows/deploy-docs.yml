@@ -1,0 +1,25 @@
+name: Deploy docs
+on:
+  push:
+    branches: [main]
+    paths: [docs/**, .github/workflows/deploy-docs.yml]
+concurrency:
+  group: deploy-docs
+  cancel-in-progress: true
+permissions:
+  id-token: write
+  pages: write
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-pages.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v3
+      - run: cd docs && npm pack
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: docs/dist
+      - id: deploy-pages
+        uses: actions/deploy-pages@v1
