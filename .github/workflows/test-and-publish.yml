@@ -11,6 +11,10 @@ on:
 concurrency:
   group: test-and-publish
   cancel-in-progress: true
+permissions:
+  contents: write
+  pull-requests: write
+  packages: write
 jobs:
   test-and-publish:
     runs-on: ubuntu-latest
