@@ -1,0 +1,20 @@
+name: Wiki
+on:
+  push:
+    branches: [main]
+    paths: [wiki/**, .github/workflows/wiki.yml]
+concurrency:
+  group: wiki
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: newrelic/wiki-sync-action@v1.0.1
+        with:
+          source: ./wiki
+          destination: wiki
+          token: ${{ secrets.GITHUB_TOKEN }}
