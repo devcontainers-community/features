@@ -1,12 +1,13 @@
 {
-  "name": "docs",
+  "name": "@jcbhmr/devcontainer-features~docs",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "prepack": "next build && next export",
+    "start": "if [ \"$NODE_ENV\" = production ]; then next build && next start; else next dev; fi",
+    "pretest": "next lint",
+    "test": "tsc --noEmit"
   },
   "dependencies": {
     "@types/node": "18.14.6",
