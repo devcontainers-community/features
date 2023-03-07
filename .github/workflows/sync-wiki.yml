@@ -1,0 +1,32 @@
+name: Sync wiki
+on:
+  push:
+    branches: [main]
+    paths: [wiki/**, .github/workflows/sync-wiki.yml]
+  gollum:
+concurrency:
+  group: sync-wiki
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  src-to-wiki:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'gollum'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: newrelic/wiki-sync-action@v1.0.1
+        with:
+          source: ./wiki
+          destination: wiki
+          token: ${{ secrets.GITHUB_TOKEN }}
+  wiki-to-src:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'gollum'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: newrelic/wiki-sync-action@v1.0.1
+        with:
+          source: wiki
+          destination: ./wiki
+          token: ${{ secrets.GITHUB_TOKEN }}

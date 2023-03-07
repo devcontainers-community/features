@@ -1,0 +1,28 @@
+name: Test and publish
+on:
+  push:
+    branches: [main]
+    paths:
+      - src/**
+      - "!src/*/README.md"
+      - test/**
+      - tools/prebuild.sh
+      - .github/workflows/test-and-publish.yml
+concurrency:
+  group: test-and-publish
+  cancel-in-progress: true
+jobs:
+  test-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm install -g @devcontainers/cli
+      - run: tools/prebuild.sh
+      - run: devcontainer features test
+      - uses: devcontainers/action@v1
+        with:
+          publish-features: true
+          base-path-to-features: src
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUBX_TOKEN_PACKAGES }}

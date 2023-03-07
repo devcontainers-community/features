@@ -1,0 +1,15 @@
+{
+  "name": "Deno",
+  "id": "deno",
+  "version": "1.0.1",
+  "description": "Installs Deno using the official install script",
+  "documentationURL": "https://github.com/jcbhmr/devcontainer-features/tree/main/src/deno#readme",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": ["latest"],
+      "default": "latest",
+      "description": "Install a specific version ('N.N.N' or 'latest')"
+    }
+  }
+}

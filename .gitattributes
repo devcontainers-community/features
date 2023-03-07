@@ -1,0 +1,4 @@
+# On Windows, we want Bash scripts to have the right line endings so that the
+# hash-bang headers work right when executing a Windows-realm *.sh file from a
+# WSL terminal.
+*.sh text eol=lf

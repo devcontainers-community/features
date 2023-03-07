@@ -1,0 +1,8 @@
+{
+  "version": {
+    "image": "mcr.microsoft.com/devcontainers/base",
+    "features": {
+      "deno": "1.30.3"
+    }
+  }
+}
