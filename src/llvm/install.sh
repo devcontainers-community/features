@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
-source src2/ensure_apt_packages.sh
-source src2/clear_local_apt_index.sh
+source utils/ensure_apt_packages.sh
+source utils/clear_local_apt_index.sh
 
 ensure_apt_packages curl ca-certificates jq
 
