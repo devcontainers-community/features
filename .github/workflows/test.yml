@@ -24,8 +24,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm install -g @devcontainers/cli
-      - uses: devcontainers/action@v1
-        with:
-          validate-only: true
-          base-path-to-features: src
+      # TODO: When features grow too numerous, test ONLY CHANGED features
       - run: tools/test.sh
