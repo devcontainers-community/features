@@ -1,0 +1,4 @@
+src/*/utils
+
+logs
+*.log
