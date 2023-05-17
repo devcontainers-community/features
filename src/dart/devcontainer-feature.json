@@ -1,0 +1,13 @@
+{
+  "id": "dart",
+  "name": "Dart",
+  "description": "Installs the Dart SDK",
+  "version": "1.0.0",
+  "options": {
+    "version": {
+      "description": "Dart version",
+      "type": "string",
+      "default": "latest"
+    }
+  }
+}
