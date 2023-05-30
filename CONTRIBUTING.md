@@ -40,7 +40,7 @@ linting report as a comment on your PR. Don't let it spook you! 🦇
 
 _Originally discussed in [devcontainers-community#4]_
 
-## What qualifies as a feature?
+## What qualifies as a feature in this project?
 
 Features are generally medium-to-large blocks of software that are tooling for a
 particular ecosystem. Things like programming languages ([Deno], [C++],
@@ -57,6 +57,8 @@ If you're in doubt, [pose your idea in a new Discussion]! 💡
 
 If you'd like to check whether or not your feature already exists, check out the
 [official @devcontainers community feature index].
+
+_Originally discussed in [#22]_
 
 <!-- prettier-ignore-start -->
 [devcontainers-community#4]: https://github.com/orgs/devcontainers-community/discussions/4
@@ -82,4 +84,5 @@ If you'd like to check whether or not your feature already exists, check out the
 [Prettier]: https://prettier.io/
 [pose your idea in a new Discussion]: https://github.com/devcontainers-community/features/discussions/new?category=ideas
 [official @devcontainers community feature index]: https://containers.dev/collections
+[#22]: https://github.com/devcontainers-community/features/pull/22
 <!-- prettier-ignore-end -->
