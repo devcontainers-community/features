@@ -2,6 +2,8 @@
 set -e
 source _common.sh
 
+# TODO: Do we need to "check_packages" here?
+
 # https://dart.dev/get-dart
 # "Perform the following one-time setup:"
 sudo apt-get update
