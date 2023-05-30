@@ -10,7 +10,11 @@ wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dea
 echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list
 # "Then install the Dart SDK:"
 sudo apt-get update
-sudo apt-get install dart
+if [[ -z $VERSION || $VERSION == latest ]]; then
+  sudo apt-get install dart
+else
+  sudo apt-get install "dart=$VERSION"
+fi
 
 # Now that we have Dart installed to /usr/lib/dart/bin, we need to expose that
 # to future shell sessions via $PATH.
