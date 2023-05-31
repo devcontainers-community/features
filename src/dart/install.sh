@@ -2,7 +2,7 @@
 set -e
 source _common.sh
 
-check_packages wget
+check_packages wget gpg
 
 # https://dart.dev/get-dart
 apt-get update
