@@ -13,8 +13,7 @@ jobs:
     strategy:
       matrix:
         features:
-          # - color
-          # - hello
+          - dart
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -34,8 +33,7 @@ jobs:
     strategy:
       matrix:
         features:
-          # - color
-          # - hello
+          - dart
     steps:
       - uses: actions/checkout@v3
 
