@@ -2,7 +2,7 @@
 set -e
 source _common.sh
 
-# TODO: Do we need to "check_packages" here?
+check_packages wget
 
 # https://dart.dev/get-dart
 apt-get update
