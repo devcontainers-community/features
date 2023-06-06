@@ -5,9 +5,16 @@
   "version": "1.0.0",
   "options": {
     "version": {
-      "description": "Dart version",
+      "description": "Select version of Dart SDK",
       "type": "string",
-      "default": "latest"
+      "default": "latest",
+      "proposals": ["latest", "3"]
+    },
+    "channel": {
+      "description": "Select build channel of Dart SDK",
+      "type": "string",
+      "default": "stable",
+      "enum": ["stable", "beta", "dev", "main"]
     }
   },
   "containerEnv": {

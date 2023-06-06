@@ -9,8 +9,14 @@ apt_get_update() {
 
 # Checks if packages are installed and installs them if not
 check_packages() {
-    if ! dpkg -s "$@" > /dev/null 2>&1; then
+    if ! dpkg -s "$@" >/dev/null 2>&1; then
         apt_get_update
         apt-get -y install --no-install-recommends "$@"
+    fi
+}
+
+check_git() {
+    if [ ! -x "$(command -v git)" ]; then
+        check_packages git
     fi
 }
