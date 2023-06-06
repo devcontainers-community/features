@@ -2,6 +2,6 @@
 set -e
 source dev-container-features-test-lib
 
-check 'dart' dart --version
+check 'dart' /usr/lib/dart/bin/dart --version
 
 reportResults
