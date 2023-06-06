@@ -102,6 +102,8 @@ curl -sL "${URL}" -o dart.zip
 unzip -q dart.zip
 mv dart-sdk/* "${DART_SDK}"/.
 
+chmod 755 "${DART_SDK}" "${DART_SDK}/bin"
+
 popd
 rm -rf /tmp/dvcf-dart
 
