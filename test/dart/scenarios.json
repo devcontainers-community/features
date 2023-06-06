@@ -1,0 +1,26 @@
+{
+    "version-3": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "dart": {
+                "version": "3"
+            }
+        }
+    },
+    "channel-beta": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "dart": {
+                "channel": "beta"
+            }
+        }
+    },
+    "channel-main": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "dart": {
+                "channel": "main"
+            }
+        }
+    }
+}
