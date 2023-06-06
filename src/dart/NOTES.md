@@ -39,7 +39,6 @@ so only versions ending with channel name (e.g. `3.1.0-63.1.beta`) can be instal
 <!-- prettier-ignore-start -->
 [Dart programming language | Dart]: https://dart.dev/
 [Dart SDK archive]: https://dart.dev/get-dart/archive
-[Flutter]: https://flutter.dev/
 [open a Discussion]: https://github.com/devcontainers-community/features/discussions/new?category=q-a
 [open an Issue]: https://github.com/devcontainers-community/features/issues/new
 <!-- prettier-ignore-end -->
