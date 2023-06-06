@@ -22,6 +22,6 @@ check_packages() {
 check_packages git
 LATEST_VERSION="$(git ls-remote --tags https://github.com/dart-lang/sdk | grep -oP "refs/tags/[0-9]+\\.[0-9]+\\.[0-9]+$" | sort -V | tail -n 1)"
 
-check 'dart' dart --version | grep "${LATEST_VERSION}"
+check 'dart' bash -c "dart --version | grep ${LATEST_VERSION}"
 
 reportResults
