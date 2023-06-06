@@ -10,15 +10,35 @@
 
 &mdash; [Dart programming language | Dart]
 
-This feature installs the Dart SDK using the official installer script. You can
-choose to pin a specific version with the `version` input. You might also want
-to check out [Flutter] if you're interested in Dart.
+This feature installs the Dart SDK.
 
 🆘 If you're having trouble with this feature, [open a Discussion] or [open an
 Issue]! We'd be happy to fix bugs! 🐛
 
+## Supported platforms
+
+`linux/amd64` and `linux/arm64` platforms `debian` and `ubuntu`.
+
+## How to specify extensions?
+
+This feature installs any version with the `version` option and `channel` option.
+Check [Dart SDK archive] for channel details.
+
+```json
+"features": {
+    "ghcr.io/devcontainers-community/features/dart:1": {
+        "version": "3",
+        "channel": "beta"
+    }
+}
+```
+
+Note that the beta and dev channels use suffix-based version matching,
+so only versions ending with channel name (e.g. `3.1.0-63.1.beta`) can be installed.
+
 <!-- prettier-ignore-start -->
 [Dart programming language | Dart]: https://dart.dev/
+[Dart SDK archive]: https://dart.dev/get-dart/archive
 [Flutter]: https://flutter.dev/
 [open a Discussion]: https://github.com/devcontainers-community/features/discussions/new?category=q-a
 [open an Issue]: https://github.com/devcontainers-community/features/issues/new
