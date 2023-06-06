@@ -34,7 +34,6 @@ arm64)
   ;;
 esac
 
-
 if [ "${VERSION}" = "latest" ]; then
   URL="https://storage.googleapis.com/dart-archive/channels/be/raw/latest/sdk/dartsdk-linux-${SDK_ARCH}-release.zip"
 fi
@@ -49,7 +48,7 @@ pushd /tmp/dvcf-dart
 
 curl -sL "${URL}" -o dart.zip
 unzip -q dart.zip
-mv dart-sdk "${DART_SDK}"
+mv dart-sdk/* "${DART_SDK}"/.
 
 popd
 rm -rf /tmp/dvcf-dart
