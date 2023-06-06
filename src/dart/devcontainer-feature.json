@@ -10,6 +10,9 @@
       "default": "latest"
     }
   },
+  "containerEnv": {
+    "PATH": "/usr/lib/dart/bin:${PATH}"
+  },
   "customizations": {
     "vscode": {
       "extensions": ["dart-code.dart-code"]

@@ -1,20 +1,60 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+VERSION=${VERSION:-"latest"}
+
+DART_SDK="/usr/lib/dart"
+
 set -e
 source _common.sh
 
-check_packages wget gpg apt-transport-https ca-certificates
-
-# https://dart.dev/get-dart
-wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/dart.gpg
-echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | tee /etc/apt/sources.list.d/dart_stable.list
-
-apt-get update
-if [[ -z $VERSION || $VERSION == latest ]]; then
-  apt-get install dart
-else
-  apt-get install "dart=$VERSION"
+if [ "$(id -u)" -ne 0 ]; then
+  echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
+  exit 1
 fi
 
-# Now that we have Dart installed to /usr/lib/dart/bin, we need to expose that
-# to future shell sessions via $PATH.
-updaterc 'export PATH="$PATH:/usr/lib/dart/bin"'
+architecture="$(dpkg --print-architecture)"
+if [ "${architecture}" != "amd64" ] && [ "${architecture}" != "arm64" ]; then
+  echo "(!) Architecture $architecture unsupported"
+  exit 1
+fi
+
+# Clean up
+rm -rf /var/lib/apt/lists/*
+
+export DEBIAN_FRONTEND=noninteractive
+
+check_packages curl ca-certificates
+
+case "$architecture" in
+amd64)
+  SDK_ARCH="x64"
+  ;;
+arm64)
+  SDK_ARCH="arm64"
+  ;;
+esac
+
+
+if [ "${VERSION}" = "latest" ]; then
+  URL="https://storage.googleapis.com/dart-archive/channels/be/raw/latest/sdk/dartsdk-linux-${SDK_ARCH}-release.zip"
+fi
+
+echo "Downloading Dart..."
+
+mkdir "${DART_SDK}"
+
+# Working directory
+mkdir /tmp/dvcf-dart
+pushd /tmp/dvcf-dart
+
+curl -sL "${URL}" -o dart.zip
+unzip dart.zip
+mv dart-sdk "${DART_SDK}"
+
+popd
+rm -rf /tmp/dvcf-dart
+
+# Clean up
+rm -rf /var/lib/apt/lists/*
+
+echo "Done!"
