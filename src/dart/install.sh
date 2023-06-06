@@ -29,16 +29,16 @@ find_version_from_git_tags() {
     local repository=$2
     local prefix=${3:-"tags/v"}
     local separator=${4:-"."}
-    local last_part_optional=${5:-"false"}
+    local last_part_optional=${5:-""}
     if [ "$(echo "${requested_version}" | grep -o "." | wc -l)" != "2" ]; then
         local escaped_separator=${separator//./\\.}
         local last_part
-        if [ "${last_part_optional}" != "false" ]; then
-            last_part="(${escaped_separator}[0-9]+)*.*${last_part_optional}"
+        if [ -n "${last_part_optional}" ]; then
+            last_part=".*${last_part_optional}"
         else
-            last_part="${escaped_separator}[0-9]+"
+            last_part=""
         fi
-        local regex="${prefix}\\K[0-9]+${escaped_separator}[0-9]+${last_part}$"
+        local regex="${prefix}\\K[0-9]+${escaped_separator}[0-9]+${escaped_separator}[0-9]+${last_part}$"
         local version_list
         check_git
         check_packages ca-certificates
@@ -75,7 +75,7 @@ if [ "${CHANNEL}" = "main" ]; then
     URL="https://storage.googleapis.com/dart-archive/channels/be/raw/latest/sdk/dartsdk-linux-${SDK_ARCH}-release.zip"
 else
     if [ "${CHANNEL}" = "stable" ]; then
-        LAST_PART="false"
+        LAST_PART=""
     elif [ "${CHANNEL}" = "beta" ]; then
         LAST_PART="beta"
     elif [ "${CHANNEL}" = "dev" ]; then
@@ -85,7 +85,7 @@ else
         exit 1
     fi
     # Soft version matching
-    find_version_from_git_tags VERSION "https://github.com/dart-lang/sdk" "tags/v" "." "${LAST_PART}"
+    find_version_from_git_tags VERSION "https://github.com/dart-lang/sdk" "tags/" "." "${LAST_PART}"
 
     URL="https://storage.googleapis.com/dart-archive/channels/${CHANNEL}/release/${VERSION}/sdk/dartsdk-linux-${SDK_ARCH}-release.zip"
 fi
