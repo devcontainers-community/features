@@ -23,7 +23,7 @@ rm -rf /var/lib/apt/lists/*
 
 export DEBIAN_FRONTEND=noninteractive
 
-check_packages curl ca-certificates
+check_packages curl ca-certificates unzip
 
 case "$architecture" in
 amd64)
