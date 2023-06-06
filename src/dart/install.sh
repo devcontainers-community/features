@@ -48,7 +48,7 @@ mkdir /tmp/dvcf-dart
 pushd /tmp/dvcf-dart
 
 curl -sL "${URL}" -o dart.zip
-unzip dart.zip
+unzip -q dart.zip
 mv dart-sdk "${DART_SDK}"
 
 popd
