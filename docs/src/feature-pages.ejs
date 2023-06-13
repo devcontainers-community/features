@@ -1,0 +1,66 @@
+---
+pagination:
+  data: features
+  size: 1
+  alias: feature
+permalink: "<%= feature.id %>/"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title><%= feature.name %></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+          <a href="https://github.com/devcontainers-community/features#readme"
+            >GitHub</a
+          >
+        </li>
+        <li>
+          <a href="https://containers.dev/features">Official features</a>
+        </li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1><%= feature.name %></h1>
+      <p><%= feature.description %></p>
+    </header>
+
+    <h2>Options</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (const [name, value] of Object.entries(feature.options)) { %>
+          <tr>
+            <td><%= name %></td>
+            <td><%= value.description %></td>
+            <td><%= value.default %></td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <%- feature.notesHTML %>
+  </body>
+</html>
