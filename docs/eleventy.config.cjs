@@ -25,11 +25,11 @@ module.exports = exports = (ctx) => {
       const template = JSON.parse(
         await readFile(`../src/${name}/devcontainer-feature.json`, "utf8")
       );
-      const readme = await readFile(`../src/${name}/README.md`, "utf8").catch(
+      const notes = await readFile(`../src/${name}/NOTES.md`, "utf8").catch(
         () => undefined
       );
-      feature.readme = readme;
-      feature.readmeHTML = marked(readme);
+      feature.notes = notes;
+      feature.notesHTML = marked(notes);
       features.push(feature);
     }
     return features;
