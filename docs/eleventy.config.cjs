@@ -26,7 +26,7 @@ module.exports = exports = (ctx) => {
         await readFile(`../src/${name}/devcontainer-feature.json`, "utf8")
       );
       const notes = await readFile(`../src/${name}/NOTES.md`, "utf8").catch(
-        () => undefined
+        () => ""
       );
       feature.notes = notes;
       feature.notesHTML = marked(notes);
