@@ -22,7 +22,7 @@ module.exports = exports = (ctx) => {
   ctx.addGlobalData("features", async () => {
     const features = [];
     for (const name of await readdir("../src")) {
-      const template = JSON.parse(
+      const feature = JSON.parse(
         await readFile(`../src/${name}/devcontainer-feature.json`, "utf8")
       );
       const notes = await readFile(`../src/${name}/NOTES.md`, "utf8").catch(
