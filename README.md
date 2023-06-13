@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD041 MD033 MD045 -->
+<!-- markdownlint-disable MD041 MD033 -->
 
 ![🚧 Under construction 👷‍♂️](https://i.imgur.com/LEP2R3N.png)
 
@@ -8,7 +8,7 @@
 
 <div align="center">
 
-![](https://i.imgur.com/Gz9yWx8.png)
+![Code demo](https://i.imgur.com/Gz9yWx8.png)
 
 [Docs website](https://devcontainers-community.github.io/features/)
 | [Official feature index](https://containers.dev/features)
