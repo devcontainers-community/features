@@ -10,8 +10,10 @@ export default async function getAllFeatures(owner: string): Promise<string[]> {
   url.searchParams.set("type", "registrypackages");
   url.searchParams.set("p", "1");
   while (true) {
+    console.debug("Fetching", url.href);
     const response = await fetch(url);
     const html = await response.text();
+    console.debug("HTML length", html.length);
 
     const document = new DOMParser().parseFromString(html, "text/html")!;
     const $ = (x: string) => document.querySelector(x);
@@ -20,10 +22,12 @@ export default async function getAllFeatures(owner: string): Promise<string[]> {
     const features = $$("[data-testid='results-list'] .search-title").map(
       (x) => x.innerText
     );
+    console.debug("Found features", features.length);
     allFeatures.push(...features);
 
     const nextButton = $("a[rel='next']");
     if (!nextButton) {
+      console.debug("Exiting loop");
       break;
     }
     const p = parseInt(url.searchParams.get("p")!);
