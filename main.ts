@@ -3,8 +3,33 @@ import { readFile, writeFile } from "node:fs/promises";
 import { $ } from "npm:zx";
 import { temporaryDirectory, temporaryWrite } from "npm:tempy";
 import process from "node:process";
-import getAllFeatures from "./lib/getAllFeatures.ts";
-import getFeatureManifest from "./lib/getFeatureManifest.ts";
+
+async function getAllFeatures(repo: string): Promise<string[]> {
+  const [owner, name] = repo.split("/");
+  const url = new URL("https://github.com/search");
+  url.searchParams.set(
+    "q",
+    `owner:${owner} /${name}\\/.+/ package_type:container`
+  );
+  url.searchParams.set("type", "registrypackages");
+  url.searchParams.set("p", "1");
+  const response = await fetch(url);
+  return (await response.json()).payload.results
+    .map((x) => x.name)
+    .filter((f) => f !== "features")
+    .map((f) => f.split("/")[1]);
+}
+
+async function getFeatureManifest(image: string): Promise<any> {
+  if (!image.endsWith(":latest")) {
+    image += ":latest";
+  }
+
+  const imageManifest = JSON.parse(
+    (await $`oras manifest fetch ${image}`).toString()
+  );
+  return JSON.parse(imageManifest.annotations["dev.containers.metadata"]);
+}
 
 const devcontainerCollection = {
   features: [] as any[],
