@@ -47,7 +47,6 @@ for (const id of featureIds) {
 }
 
 const tempDirPath = temporaryDirectory();
-await copyFile("LICENSE", join(tempDirPath, "LICENSE"));
 process.chdir(tempDirPath);
 $.cwd = process.cwd();
 
@@ -75,5 +74,4 @@ await $`oras push \
   ghcr.io/${process.env.GITHUB_REPOSITORY}:latest \
   --config /dev/null:application/vnd.devcontainers \
   --annotation-file ${annotationsPath} \
-  devcontainer-collection.json:application/vnd.devcontainers.collection.layer.v1+json \
-  LICENSE`;
+  devcontainer-collection.json:application/vnd.devcontainers.collection.layer.v1+json`;
