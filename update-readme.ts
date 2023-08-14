@@ -1,6 +1,7 @@
 #!/usr/bin/env -S deno run -A
 import { readFile, writeFile } from "node:fs/promises";
 import { $ } from "npm:zx";
+import process from "node:process";
 
 let md = await readFile("README.md", "utf8");
 const collection = `ghcr.io/${process.env.GITHUB_REPOSITORY}:latest`;
