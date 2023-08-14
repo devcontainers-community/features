@@ -13,6 +13,6 @@
 
 </div>
 
-<!-- BEGIN_FEATURE_LIST -->
 
-<!-- END_FEATURE_LIST -->
+- **[CMake](https://devcontainers.community/features-cmake/)** - 🍰 Installs the CMake build tool
+
