@@ -17,7 +17,7 @@ export default async function getAllFeatures(owner: string): Promise<string[]> {
 
     const document = new DOMParser().parseFromString(html, "text/html")!;
     const $ = (x: string) => document.querySelector(x);
-    const $$ = (x: string) => [...document.querySelector(x)];
+    const $$ = (x: string) => [...document.querySelectorAll(x)];
 
     const features = $$("[data-testid='results-list'] .search-title").map(
       (x) => x.innerText
