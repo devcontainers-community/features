@@ -13,6 +13,8 @@
 
 </div>
 
-
+<!-- prettier-ignore-start -->
+<!-- START_FEATURE_LIST -->
 - **[CMake](https://devcontainers.community/features-cmake/)** - 🍰 Installs the CMake build tool
-
+<!-- END_FEATURE_LIST -->
+<!-- prettier-ignore-end -->
