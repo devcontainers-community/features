@@ -12,3 +12,7 @@
 </p>
 
 </div>
+
+<!-- BEGIN_FEATURE_LIST -->
+
+<!-- END_FEATURE_LIST -->

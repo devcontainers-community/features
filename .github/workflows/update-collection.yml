@@ -2,13 +2,9 @@ name: Update collection
 on:
   push:
     branches: "main"
-    paths-ignore:
-      - .gitignore
-      - CONTRIBUTING.md
-      - README.md
-      - LICENSE
-      - .github/**
-      - "!.github/workflows/update-collection.yml"
+    paths:
+      - update-collection.ts
+      - .github/workflows/update-collection.yml
   schedule:
     # https://crontab.guru/daily
     - cron: "0 0 * * *"
@@ -32,7 +28,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - run: deno run -A main.ts
+      - run: deno run -A update-collection.ts
       - run: |
           pushd "$(mktemp -d)"
           oras manifest fetch ghcr.io/${{ github.repository }}:latest | jq
