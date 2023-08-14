@@ -17,4 +17,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: denoland/setup-deno@v1
-      - run: deno run -A .github/workflows/update-index.ts
+      - run: deno run -A main.ts
