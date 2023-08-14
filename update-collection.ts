@@ -34,7 +34,7 @@ async function getFeatureManifest(image: string): Promise<any> {
 
 const devcontainerCollection = {
   sourceInformation: {
-    source: "devcontainers-community/update-collection",
+    source: "devcontainer-cli",
   },
   features: [] as any[],
 };
