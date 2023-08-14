@@ -1,0 +1,3 @@
+on:
+  registry_package:
+    types: [published]

@@ -1,4 +1,4 @@
-name: Update feature collection index
+name: Update index
 on:
   schedule:
     # https://crontab.guru/daily
@@ -9,11 +9,12 @@ concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
-  update-feature-collection-index:
+  update-index:
     permissions:
       contents: read
       packages: write
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: denoland/setup-deno@v1
-      - run: deno run -A main.ts
+      - run: deno run -A .github/workflows/update-index.ts
