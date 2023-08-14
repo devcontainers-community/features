@@ -26,4 +26,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: denoland/setup-deno@v1
+      - uses: oras-project/setup-oras@v1
       - run: deno run -A main.ts
