@@ -34,9 +34,10 @@ const annotations = {
     "org.opencontainers.image.title": "devcontainer-collection.json",
   },
 };
-const annotationsPath = temporaryWrite(JSON.stringify(annotations, null, 2), {
-  suffix: ".json",
-});
+const annotationsPath = await temporaryWrite(
+  JSON.stringify(annotations, null, 2),
+  { suffix: ".json" }
+);
 
 await $`tree -a`;
 
