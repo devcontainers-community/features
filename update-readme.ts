@@ -23,6 +23,6 @@ const featureListMD = devcontainerCollection.features
 
 md = md.replace(
   /(<!-- START_FEATURE_LIST -->)([\s\S]*?)(<!-- END_FEATURE_LIST -->)/,
-  `$1\n${featureListMD}\n$3`
+  `$1\n\n${featureListMD}\n\n$3`
 );
 await writeFile(mdPath, md);
