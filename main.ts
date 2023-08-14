@@ -42,7 +42,7 @@ const annotationsPath = await temporaryWrite(
 await $`tree -a`;
 
 await $`oras push \
-  ghcr.io/${process.env.GITHUB_REPOSITORY} \
+  ghcr.io/${process.env.GITHUB_REPOSITORY}:latest \
   --config /dev/null:application/vnd.devcontainers \
   --annotation-file ${annotationsPath} \
   devcontainer-collection.json:application/vnd.devcontainers.collection.layer.v1+json`;
