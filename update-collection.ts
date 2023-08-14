@@ -1,8 +1,9 @@
 #!/usr/bin/env -S deno run -A
-import { readFile, writeFile } from "node:fs/promises";
+import { copyFile, readFile, writeFile } from "node:fs/promises";
 import { $ } from "npm:zx";
 import { temporaryDirectory, temporaryWrite } from "npm:tempy";
 import process from "node:process";
+import { join } from "node:path";
 
 async function getAllFeatures(repo: string): Promise<string[]> {
   const [owner, name] = repo.split("/");
@@ -46,6 +47,7 @@ for (const id of featureIds) {
 }
 
 const tempDirPath = temporaryDirectory();
+await copyFile("LICENSE", join(tempDirPath, "LICENSE"));
 process.chdir(tempDirPath);
 $.cwd = process.cwd();
 
@@ -73,4 +75,5 @@ await $`oras push \
   ghcr.io/${process.env.GITHUB_REPOSITORY}:latest \
   --config /dev/null:application/vnd.devcontainers \
   --annotation-file ${annotationsPath} \
-  devcontainer-collection.json:application/vnd.devcontainers.collection.layer.v1+json`;
+  devcontainer-collection.json:application/vnd.devcontainers.collection.layer.v1+json \
+  LICENSE`;
