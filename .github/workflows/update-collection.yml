@@ -1,4 +1,4 @@
-name: Update index
+name: Update collection
 on:
   push:
     branches: "main"
@@ -8,7 +8,7 @@ on:
       - README.md
       - LICENSE
       - .github/**
-      - "!.github/workflows/update-index.yml"
+      - "!.github/workflows/update-collection.yml"
   schedule:
     # https://crontab.guru/daily
     - cron: "0 0 * * *"
@@ -18,7 +18,7 @@ concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
-  update-index:
+  update-collection:
     permissions:
       contents: read
       packages: write

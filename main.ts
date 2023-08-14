@@ -32,6 +32,9 @@ async function getFeatureManifest(image: string): Promise<any> {
 }
 
 const devcontainerCollection = {
+  sourceInformation: {
+    source: "devcontainers-community/update-collection",
+  },
   features: [] as any[],
 };
 const featureIds = await getAllFeatures(process.env.GITHUB_REPOSITORY!);
