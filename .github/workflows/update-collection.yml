@@ -35,10 +35,6 @@ jobs:
           oras pull ghcr.io/${{ github.repository }}:latest
           tree -a
           jq '' devcontainer-collection.json
-  reference-devcontainers:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: oras-project/setup-oras@v1
       - run: |
           pushd "$(mktemp -d)"
           oras manifest fetch ghcr.io/devcontainers/features:latest | jq
