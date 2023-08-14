@@ -1,11 +1,12 @@
 import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
 
-export default async function getAllFeatures(owner: string): Promise<string[]> {
+export default async function getAllFeatures(repo: string): Promise<string[]> {
+  const [owner, name] = repo.split("/");
   const allFeatures: string[] = [];
   const url = new URL("https://github.com/search");
   url.searchParams.set(
     "q",
-    `owner:${owner} /features\\/.+/ package_type:container`
+    `owner:${owner} /${name}\\/.+/ package_type:container`
   );
   url.searchParams.set("type", "registrypackages");
   url.searchParams.set("p", "1");

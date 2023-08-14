@@ -9,7 +9,7 @@ import getFeatureManifest from "./lib/getFeatureManifest.ts";
 const devcontainerCollection = {
   features: [] as any[],
 };
-const featureIds = await getAllFeatures(process.env.GITHUB_REPOSITORY_OWNER!);
+const featureIds = await getAllFeatures(process.env.GITHUB_REPOSITORY!);
 for (const id of featureIds) {
   const devcontainerFeature = await getFeatureManifest(
     `ghcr.io/${process.env.GITHUB_REPOSITORY}/${id}`
