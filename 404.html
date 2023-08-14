@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<script>
+  (function () {
+    "use strict";
+    let m;
+    if ((m = location.pathname.match(/^\/features\/([\w_$]+?)$/))) {
+      location.replace(`/features-${m[1]}/`);
+    } else {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://pages.github.com/404.html", false);
+      xhr.send(null);
+      document.open();
+      document.write(xhr.responseText);
+      document.close();
+    }
+  })();
+</script>
