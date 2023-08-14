@@ -1,3 +1,11 @@
 on:
   registry_package:
     types: [published]
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "$EVENT"
+        env:
+          EVENT: ${{ toJSON(github.event) }}
