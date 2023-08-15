@@ -57,7 +57,7 @@ await writeFile(
 
 const annotations = {
   $manifest: {
-    "com.github.package_type": "devcontainer_collection",
+    "com.github.package.type": "devcontainer_collection",
   },
   "devcontainer-collection.json": {
     "org.opencontainers.image.title": "devcontainer-collection.json",
