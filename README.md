@@ -10,7 +10,8 @@
 🐳 Use JSON, not Dockerfiles! \
 👨‍👩‍👧‍👦 Community-driven maintainership
 
-[![](https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A7%B0+Add+a+feature&color=CB3837&label=)](https://github.com/devcontainers-community/features/discussions/new?category=ideas)
+[![](https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A7%B0+Add+a+feature&color=CB3837&label=)](https://github.com/devcontainers-community/features/discussions/new?category=ideas) &nbsp;
+[![](https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A4%9D+Join+the+org&color=222222&label=)](https://github.com/orgs/devcontainers-community/discussions/new?category=general)
 
 <!-- prettier-ignore-start -->
 <!-- START_FEATURE_LIST -->
