@@ -17,6 +17,7 @@ const devcontainerCollection = JSON.parse(
 
 const featureListMD = devcontainerCollection.features
   .filter((f) => f.documentationURL)
+  .filter((f1) => devcontainerCollection.features.every((f2) => f1 === f2 || f1.documentationURL !== f2.documentationURL))
   .map((f) => `- **[${f.name}](${f.documentationURL})** - ${f.description}`)
   .join("\n");
 
