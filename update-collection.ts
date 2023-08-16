@@ -46,6 +46,15 @@ for (const id of featureIds) {
   devcontainerCollection.features.push(devcontainerFeature);
 }
 
+const seenIds = new Set()
+for (let i = 0; i < devcontainerCollection.features.length; i++) {
+  const f = devcontainerCollection.features[i]
+  if (seenIds.has(f.id)) {
+    devcontainerCollection.features.splice(i, 1);
+    i--;
+  }
+}
+
 const tempDirPath = temporaryDirectory();
 process.chdir(tempDirPath);
 $.cwd = process.cwd();
