@@ -11,8 +11,7 @@
 <!-- prettier-ignore-start -->
 <!-- START_FEATURE_LIST -->
 
-- **[Dart](https://devcontainers.community/features-dart-sdk/)** - Install the Dart SDK
-- **[Dart](https://devcontainers.community/features-dart-sdk/)** - Install the Dart SDK
+
 
 <!-- END_FEATURE_LIST -->
 <!-- prettier-ignore-end -->
