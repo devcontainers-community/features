@@ -2,12 +2,8 @@
 
 🧰 Community-driven collection of addons for [@devcontainers]
 
-<a href="https://github.com/devcontainers-community/features/discussions/new?category=ideas">
-  <img src="https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A7%B0+Add+a+feature&color=CB3837&label=">
-</a>
-
 <p align=center>
-  <img src="https://picsum.photos/600/400" />
+  <img src=https://github.com/devcontainers-community/features/assets/61068799/dc90e2b0-0ad7-4ca5-9315-29b245100444>
 </p>
 
 <p align=center>
@@ -15,6 +11,17 @@
   | <a href="https://github.com/devcontainers-community/features">GitHub</a>
   | <a href="https://containers.dev/features">All features</a>
 </p>
+
+[![](https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A7%B0+Add+a+feature&color=CB3837&label=)](https://github.com/devcontainers-community/features/discussions/new?category=ideas) \
+Don't see your favorite tool here? Add it! 🚀
+
+<!-- prettier-ignore-start -->
+<!-- START_FEATURE_LIST -->
+
+- **[Dart](undefined)** - Installs the Dart SDK
+
+<!-- END_FEATURE_LIST -->
+<!-- prettier-ignore-end -->
 
 ## Usage
 
@@ -28,8 +35,8 @@ To add any feature to your Dev Container, just add something like this to your
 // devcontainer.json
 {
   "features": {
-    "ghcr.io/devcontainers-community/features/dart": {},
     "ghcr.io/devcontainers-community/features/cmake": {},
+    "ghcr.io/devcontainers-community/features/llvm": {},
     "ghcr.io/devcontainers-community/features/gcc": {}
   }
 }
@@ -51,17 +58,6 @@ available and what they do. 💻
   }
 }
 ```
-
-## Feature list
-
-<!-- prettier-ignore-start -->
-<!-- START_FEATURE_LIST -->
-
-- **[Dart](https://devcontainers.community/features-dart-sdk/)** - Install the Dart SDK
-- **[Dart](undefined)** - Installs the Dart SDK
-
-<!-- END_FEATURE_LIST -->
-<!-- prettier-ignore-end -->
 
 ## Development
 
