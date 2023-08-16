@@ -12,8 +12,7 @@
   | <a href="https://containers.dev/features">All features</a>
 </p>
 
-[![](https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A7%B0+Add+a+feature&color=CB3837&label=)](https://github.com/devcontainers-community/features/discussions/new?category=ideas) \
-Don't see your favorite tool here? Add it! 🚀
+[![](https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A7%B0+Add+a+feature&color=CB3837&label=)](https://github.com/devcontainers-community/features/discussions/new?category=ideas)
 
 <!-- prettier-ignore-start -->
 <!-- START_FEATURE_LIST -->
