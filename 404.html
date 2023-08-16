@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <script>
   (function () {
     "use strict";
-    const url = new URL(location);
-    url.pathname = url.pathname.replace(
-      /(^\/features)(\/)([\w\._$]+)($|\/)/,
-      "$1-$3$4"
-    );
-    location.replace(url);
+    let m;
+    if ((m = location.pathname.match(/^\/features\/([\w\._$]+)$/))) {
+      location.replace(
+        `https://github.com/devcontainers-community/features-${m[1]}#readme`
+      );
+    }
   })();
 </script>
