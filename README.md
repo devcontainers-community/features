@@ -15,7 +15,8 @@
 <!-- prettier-ignore-start -->
 <!-- START_FEATURE_LIST -->
 
-- **[Dart](https://devcontainers.community/features-dart-sdk/)** - Install the Dart SDK
+- **[Dart](https://github.com/devcontainers-community/features-dart-sdk#readme)** - Install the Dart SDK
+- **[CMake](https://github.com/devcontainers-community/features-cmake#readme)** - A feature to install CMake
 
 <!-- END_FEATURE_LIST -->
 <!-- prettier-ignore-end -->
