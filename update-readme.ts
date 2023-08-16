@@ -14,12 +14,14 @@ await $`oras pull ghcr.io/${process.env.GITHUB_REPOSITORY}:latest`;
 const devcontainerCollection = JSON.parse(
   await readFile(join($.cwd, "devcontainer-collection.json"), "utf8")
 );
+console.log(devcontainerCollection)
 
 const featureListMD = devcontainerCollection.features
   .filter((f) => f.documentationURL)
-  .filter((f1) => devcontainerCollection.features.every((f2) => f1 === f2 || f1.documentationURL !== f2.documentationURL))
+  .filter((f1) => devcontainerCollection.features.filter((f2) => f1 !== f2).every((f2) => f1.documentationURL !== f2.documentationURL))
   .map((f) => `- **[${f.name}](${f.documentationURL})** - ${f.description}`)
   .join("\n");
+console.log(featureListMD)
 
 md = md.replace(
   /(<!-- START_FEATURE_LIST -->)([\s\S]*?)(<!-- END_FEATURE_LIST -->)/,
