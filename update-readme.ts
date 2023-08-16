@@ -18,7 +18,6 @@ console.log(devcontainerCollection)
 
 const featureListMD = devcontainerCollection.features
   .filter((f) => f.documentationURL)
-  .filter((f1) => devcontainerCollection.features.filter((f2) => f1 !== f2).every((f2) => f1.documentationURL !== f2.documentationURL))
   .map((f) => `- **[${f.name}](${f.documentationURL})** - ${f.description}`)
   .join("\n");
 console.log(featureListMD)
