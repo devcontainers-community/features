@@ -59,7 +59,7 @@ available and what they do. 💻
 <!-- prettier-ignore-start -->
 <!-- START_FEATURE_LIST -->
 
-- **[CMake](https://devcontainers.community/features-cmake/)** - 🍰 Installs the CMake build tool
+- **[Dart](undefined)** - Installs the Dart SDK
 
 <!-- END_FEATURE_LIST -->
 <!-- prettier-ignore-end -->
