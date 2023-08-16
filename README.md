@@ -2,22 +2,21 @@
 
 🧰 Community-driven collection of addons for [@devcontainers]
 
-<div align="center">
+<p align=center>
+  <a href="https://github.com/devcontainers-community/features/discussions/new?category=ideas">
+    <img src="https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A7%B0+Add+a+feature&color=CB3837&label=">
+  </a>
+</p>
 
-<p>
+<p align=center>
   <img src="https://picsum.photos/600/400" />
 </p>
 
-<p>
+<p align=center>
   <a href="https://devcontainers.community/features/">Website</a>
   | <a href="https://github.com/devcontainers-community/features">GitHub</a>
   | <a href="https://containers.dev/features">All features</a>
 </p>
-
-</div>
-
-👀 Don't see your favorite feature here? [Open an Issue]! Also see [what's
-in-scope for this project] to see our vision.
 
 ## Usage
 
@@ -31,7 +30,9 @@ To add any feature to your Dev Container, just add something like this to your
 // devcontainer.json
 {
   "features": {
-    "ghcr.io/devcontainers-community/features/my-feature": {}
+    "ghcr.io/devcontainers-community/features/dart": {},
+    "ghcr.io/devcontainers-community/features/cmake": {},
+    "ghcr.io/devcontainers-community/features/gcc": {}
   }
 }
 ```
@@ -47,9 +48,8 @@ available and what they do. 💻
 // devcontainer.json
 {
   "features": {
-    "ghcr.io/devcontainers-community/features/cmake": {
-      "version": "3.15.0"
-    }
+    "ghcr.io/devcontainers-community/features/cmake": { "version": "3.15.0" },
+    "ghcr.io/devcontainers-community/features/gcc": { "version": "11.3.0" }
   }
 }
 ```
