@@ -6,12 +6,6 @@
   <img src="https://github.com/devcontainers-community/features/assets/61068799/dc90e2b0-0ad7-4ca5-9315-29b245100444">
 </p>
 
-<p align=center>
-  <a href="https://devcontainers.community/features/">Website</a>
-  | <a href="https://github.com/devcontainers-community/features">GitHub</a>
-  | <a href="https://containers.dev/features">All features</a>
-</p>
-
 [![](https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A7%B0+Add+a+feature&color=CB3837&label=)](https://github.com/devcontainers-community/features/discussions/new?category=ideas)
 
 <!-- prettier-ignore-start -->
