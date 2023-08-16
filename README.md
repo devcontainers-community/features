@@ -2,11 +2,9 @@
 
 🧰 Community-driven collection of addons for [@devcontainers]
 
-<p align=center>
-  <a href="https://github.com/devcontainers-community/features/discussions/new?category=ideas">
-    <img src="https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A7%B0+Add+a+feature&color=CB3837&label=">
-  </a>
-</p>
+<a href="https://github.com/devcontainers-community/features/discussions/new?category=ideas">
+  <img src="https://img.shields.io/static/v1?style=for-the-badge&message=%F0%9F%A7%B0+Add+a+feature&color=CB3837&label=">
+</a>
 
 <p align=center>
   <img src="https://picsum.photos/600/400" />
