@@ -52,6 +52,8 @@ for (let i = 0; i < devcontainerCollection.features.length; i++) {
   if (seenIds.has(f.id)) {
     devcontainerCollection.features.splice(i, 1);
     i--;
+  } else {
+    seenIds.add(f.id)
   }
 }
 
