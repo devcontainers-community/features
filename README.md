@@ -3,7 +3,7 @@
 🧰 Community-driven collection of addons for [@devcontainers]
 
 <p align=center>
-  <img src=https://github.com/devcontainers-community/features/assets/61068799/dc90e2b0-0ad7-4ca5-9315-29b245100444>
+  <img src="https://github.com/devcontainers-community/features/assets/61068799/dc90e2b0-0ad7-4ca5-9315-29b245100444">
 </p>
 
 <p align=center>
