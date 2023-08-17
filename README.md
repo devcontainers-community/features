@@ -83,7 +83,6 @@ we'll get you set up. 🎉 We're very open to new people.
 [this vs code blog post]: https://code.visualstudio.com/blogs/2022/09/15/dev-container-features
 [@devcontainers]: https://github.com/devcontainers
 [open an issue]: https://github.com/devcontainers-community/features/issues/new
-[what's in-scope for this project]: https://github.com/devcontainers-community/features/blob/main/CONTRIBUTING.md
 [transferred]: https://docs.github.com/en/github/administering-a-repository/transferring-a-repository
 [containers.dev/features]: https://containers.dev/features
 <!-- prettier-ignore-end -->
