@@ -13,11 +13,10 @@ async function getAllFeatures(repo: string): Promise<string[]> {
     `owner:${owner} /${name}\\/.+/ package_type:container`
   );
   url.searchParams.set("type", "registrypackages");
-  url.searchParams.set("p", "1");
   const response = await fetch(url);
   return (await response.json()).payload.results
     .map((x) => x.name)
-    .filter((f) => f !== "features")
+    .filter((f) => f !== name)
     .map((f) => f.split("/")[1]);
 }
 
