@@ -16,9 +16,9 @@
 <!-- prettier-ignore-start -->
 <!-- START_FEATURE_LIST -->
 
-- **[Dart](https://github.com/devcontainers-community/features-dart-sdk#readme)** - Install the Dart SDK
-- **[CMake](https://github.com/devcontainers-community/features-cmake#readme)** - A feature to install CMake
 - **[llvm](https://github.com/devcontainers-community/features-llvm)** - Installs llvm on debian based systems
+- **[CMake](https://github.com/devcontainers-community/features-cmake#readme)** - A feature to install CMake
+- **[Dart](https://github.com/devcontainers-community/features-dart-sdk#readme)** - Install the Dart SDK
 
 <!-- END_FEATURE_LIST -->
 <!-- prettier-ignore-end -->
