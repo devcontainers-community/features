@@ -42,15 +42,3 @@ jobs:
           oras pull ghcr.io/devcontainers/features:latest
           tree -a
           jq '' devcontainer-collection.json
-  update-readme:
-    needs: update-collection
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: denoland/setup-deno@v1
-      - uses: oras-project/setup-oras@v1
-      - run: deno run -A update-readme.ts
-      - run: cat README.md
-      - uses: stefanzweifel/git-auto-commit-action@v4
