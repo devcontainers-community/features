@@ -7,6 +7,9 @@ on:
   pull_request:
     paths:
       - .github/workflows/update-main-readme.yml
+  schedule:
+    # https://crontab.guru/daily
+    - cron: "0 0 * * *"
   registry_package: {}
   workflow_dispatch: {}
 concurrency:
