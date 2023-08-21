@@ -17,11 +17,12 @@
 <!-- START_FEATURE_LIST -->
 
 - **[Dart](https://github.com/devcontainers-community/features-dart-sdk#readme)** - Install the Dart SDK
-- **[SurrealDB](https://github.com/devcontainers-community/features-surrealdb)**
-- **Bazel** - Bazel feature
-- **Tiny Go (no sudo)** - A feature to install tiny go (no sudo)
+- **[direnv](http://github.com/devcontainers-community/features-direnv)** - direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory.
 - **Deno** - Installs Deno
 - **[llvm](https://github.com/devcontainers-community/features-llvm)** - Installs llvm on debian based systems
+- **[SurrealDB](https://github.com/devcontainers-community/features-surrealdb)**
+- **Tiny Go (no sudo)** - A feature to install tiny go (no sudo)
+- **Bazel** - Bazel feature
 - **[CMake](https://github.com/devcontainers-community/features-cmake#readme)** - A feature to install CMake
 
 <!-- END_FEATURE_LIST -->
