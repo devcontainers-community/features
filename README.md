@@ -28,6 +28,8 @@
 <!-- END_FEATURE_LIST -->
 <!-- prettier-ignore-end -->
 
+[↗️ See all features at containers.dev/features](https://containers.dev/features)
+
 ## Usage
 
 ![Codespaces](https://img.shields.io/static/v1?style=for-the-badge&message=Codespaces&color=181717&logo=GitHub&logoColor=FFFFFF&label=)
