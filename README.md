@@ -16,10 +16,10 @@
 <!-- prettier-ignore-start -->
 <!-- START_FEATURE_LIST -->
 
+- **[TinyGo](https://github.com/devcontainers-community/features-tinygo#readme)** - 🤏 Installs tinygo from tinygo-org/tinygo
 - **[SurrealDB](https://github.com/devcontainers-community/features-surrealdb)**
 - **Bazel** - Bazel feature
 - **[direnv](http://github.com/devcontainers-community/features-direnv)** - direnv is an extension for your shell. It augments existing shells with a new feature that can load and unload environment variables depending on the current directory.
-- **Tiny Go (no sudo)** - A feature to install tiny go (no sudo)
 - **[llvm](https://github.com/devcontainers-community/features-llvm)** - Installs llvm on debian based systems
 - **Deno** - Installs Deno
 
